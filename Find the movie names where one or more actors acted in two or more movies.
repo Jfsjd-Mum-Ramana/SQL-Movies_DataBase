@@ -1,0 +1,3 @@
+SELECT Mov_Title  FROM movies
+INNER JOIN actor
+ON movies.mov_year = actor.Act_Name;
