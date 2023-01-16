@@ -1,0 +1,6 @@
+SELECT mov_title, MAX(rev_stars)
+FROM movies
+INNER JOIN rating USING(mov_id)
+GROUP BY mov_title 
+HAVING MAX(rev_stars)>6
+ORDER BY mov_title;
