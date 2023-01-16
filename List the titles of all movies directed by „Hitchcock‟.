@@ -1,0 +1,16 @@
+select Mov_Title from movies
+ where Dir_id=22;
+ 
+  
+SELECT mov_title 
+FROM movies 
+WHERE mov_id IN (
+SELECT mov_id 
+FROM movie_cast 
+WHERE act_id IN (
+SELECT act_id 
+FROM actor 
+WHERE act_id IN (
+SELECT act_id 
+FROM movie_cast GROUP BY act_id 
+HAVING COUNT(act_id)>2)));
