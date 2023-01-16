@@ -1,0 +1,6 @@
+select act_name from Actor
+where act_id in(select a.act_id 
+from (select act_id from Movie_cast natural join Movies
+where mov_year<2023)a 
+inner join  (select act_id from Movie_cast natural join Movies 
+where mov_year>2015)b on a.act_id=b.act_id);
